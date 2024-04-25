@@ -12,7 +12,7 @@
                         <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
                         <div class="position-relative mx-auto">
                             <form action="{% url 'landing' %}" method="GET">
-                                <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text" name="search_query" placeholder="Search by name">
+                                <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text" name="search" value="{{ search }}" placeholder="Search by name">
                                 <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Search</button>
                             </form>
                         </div>
@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                    <h4>{{ product.name }}</h4>
+                                    <a class="h4" href="{% url 'product-detail' product.id %}">{{ product.name }}</a>
                                     <p>{{ product.description }}</p>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                         <p class="text-dark fs-5 fw-bold mb-0">{{ product.price }}</p>

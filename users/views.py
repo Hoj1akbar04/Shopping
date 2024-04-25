@@ -9,7 +9,16 @@ from django.contrib.auth import login, logout
 
 class LandingPageView(View):
     def get(self, request):
-        return render(request, 'main/index.html')
+        products = Products.objects.all()
+        users = User.objects.all()
+        testimonials = Testimonials.objects.all()
+        context = {
+            'testimonials': testimonials,
+            'products': products,
+
+        }
+
+        return render(request, 'main/index.html', context)
 
 
 class UserRegisterView(View):
