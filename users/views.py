@@ -15,6 +15,7 @@ class LandingPageView(View):
         context = {
             'testimonials': testimonials,
             'products': products,
+            "users": users,
 
         }
 
