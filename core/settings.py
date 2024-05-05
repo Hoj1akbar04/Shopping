@@ -19,7 +19,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["178.128.41.226", "127.0.0.1"]
+ALLOWED_HOSTS = []
 
 LOGIN_URL = "login"
 
@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     "import_export",
     "users",
     "products",
+    'rest_framework',
+    'music',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -133,7 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR / 'static/')
+STATICFILES_DIRS = [BASE_DIR, 'static']
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
+MEDIAFILES_DIRS = [BASE_DIR, 'media']

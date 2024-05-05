@@ -5,6 +5,54 @@ from users.models import Products, ProductTypes, Payments, PaymentStatuses, Comm
 from .forms import UserLoginForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
+from .serializers import AddressSerializer, UserSerializer, ProductSerializer, ProductTypeSerializer, CountrySerializer, CitySerializer
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+from .models import Country, City, Address, Products, ProductTypes, Users
+from rest_framework import viewsets
+
+
+class UserAPIViewSet(viewsets.ModelViewSet):
+    queryset = Users.objects.all
+    serializer_class = UserSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
+
+
+class ProductTypeAPIViewSet(viewsets.ModelViewSet):
+    queryset = ProductTypes.objects.all
+    serializer_class = ProductTypeSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
+
+
+class ProductAPIViewSet(viewsets.ModelViewSet):
+    queryset = Products.objects.all
+    serializer_class = ProductSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
+
+
+class CountryAPIViewSet(viewsets.ModelViewSet):
+    queryset = Country.objects.all
+    serializer_class = CountrySerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
+
+
+class CityAPIViewSet(viewsets.ModelViewSet):
+    queryset = City.objects.all
+    serializer_class = CitySerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
+
+
+class AddressAPIViewSet(viewsets.ModelViewSet):
+    queryset = Address.objects.all
+    serializer_class = AddressSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, )
 
 
 class LandingPageView(View):
