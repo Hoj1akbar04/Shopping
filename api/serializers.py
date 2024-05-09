@@ -5,76 +5,76 @@ from users.models import Users, Products, City, Country, Address, Delivery, Prod
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Products
-        fields = ('name', 'description',)
+        fields = "__all__"
 
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
-        fields = ('name', )
+        fields = "__all__"
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Users
-        fields = ('first_name', 'last_name', 'email', 'username', 'phone_number',)
+        fields = "__all__"
 
 
 class DeliverySerializer(serializers.ModelSerializer):
     class Meta:
         model = Delivery
-        fields = ('first_name', 'last_name', 'email', 'car_type', 'address', )
+        fields = "__all__"
 
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ('name', )
+        fields = "__all__"
 
 
 class ProductTypesSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductTypes
-        fields = ('name', 'price', 'description', 'rating', 'country_of_origin', )
+        fields = "__all__"
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categories
-        fields = ('name', 'description',)
+        fields = "__all__"
 
 
 class CommentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments
-        fields = ('comment', )
+        fields = "__all__"
 
 
 class PaymentTypesSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaymentTypes
-        fields = ('name', )
+        fields = "__all__"
 
 
 class PaymentStatusesSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaymentStatuses
-        fields = ('name', )
+        fields = "__all__"
 
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ('name', )
+        fields = "__all__"
 
 
 class PaymentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payments
-        fields = ("amount", 'payment_type', 'payment_status', 'product_type', )
+        fields = "__all__"
 
 
 class TestimonialsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Testimonials
-        fields = ('content', 'client_name', )
+        fields = "__all__"

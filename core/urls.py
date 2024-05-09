@@ -9,12 +9,12 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Full Project API",
-        description="Music App",
-        default_version="v1",
-        terms_of_service='spotify.com',
-        contact=openapi.Contact(email='hojiakbar@gmail.com'),
-        license=openapi.License(name='demo service')
+        title="Full API",
+        description="App",
+        default_version="v2",
+        terms_of_service='onlineshop.com',
+        contact=openapi.Contact(email='hoji@gmail.com'),
+        license=openapi.License(name='demo')
     ),
     public=True,
     permission_classes=[permissions.AllowAny, ]
@@ -24,7 +24,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("users.urls")),
-    path("api/v1/", include("music.urls")),
+    path("api/v2/", include("music.urls")),
     path("api/v1/", include("api.urls")),
     path('api-auth/', include('rest_framework.urls')),
     path('docs-swagger/', schema_view.with_ui("swagger", cache_timeout=0), name='swagger'),

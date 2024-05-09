@@ -8,6 +8,9 @@ class Artist(models.Model):
     last_update = models.DateTimeField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Album(models.Model):
     title = models.CharField(max_length=50)
@@ -16,6 +19,9 @@ class Album(models.Model):
     last_update = models.DateTimeField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Song(models.Model):
     title = models.CharField(max_length=50)
@@ -23,5 +29,8 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE, null=True, blank=True)
     last_update = models.DateTimeField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
 
