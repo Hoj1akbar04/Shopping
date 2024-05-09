@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'music',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
